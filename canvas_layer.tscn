@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://qddry1hdfq4q"]
+
+[ext_resource type="Script" path="res://canvas_layer.gd" id="1_tm88x"]
+[ext_resource type="Texture2D" uid="uid://ceg8vm3e1wr7g" path="res://Assets_aula1/128px/Close_128.png" id="2_l44mw"]
+[ext_resource type="Texture2D" uid="uid://bbvacubhcaopo" path="res://Assets_aula1/128px/Play_128.png" id="3_m78nu"]
+[ext_resource type="Texture2D" uid="uid://jxe2c7ia4pbw" path="res://Assets_aula1/128px/Restart_128.png" id="4_m7yvx"]
+
+[node name="pause_menu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_tm88x")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.145098, 0, 0.937255, 0.160784)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -112.0
+offset_top = -36.0
+offset_right = 112.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="bt_quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("2_l44mw")
+flat = true
+
+[node name="bt_voltar" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+icon = ExtResource("3_m78nu")
+flat = true
+
+[node name="bt_reiniciar" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_m7yvx")
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/bt_quit" to="." method="_on_bt_quit_pressed"]
+[connection signal="pressed" from="HBoxContainer/bt_voltar" to="." method="_on_bt_voltar_pressed"]
+[connection signal="pressed" from="HBoxContainer/bt_reiniciar" to="." method="_on_bt_reiniciar_pressed"]
